@@ -1,0 +1,22 @@
+version: 2
+source:
+    kind: git
+    version: 1.1.6
+    ref: refs/tags/v1.1.6
+    revision: cda9302f888262dcc0bf85b94e906d202021d78a
+    tag: v1.1.6
+fingerprint: sha256:cf5df8767302abcf75b3631b2cd8775eaa5db294305df8dc5001495fa28b52ac
+status: packaged
+images:
+    - id: app
+      source_ref: ttl.sh/lazycat-happycoder-cf5df8767302:24h@sha256:37107ebc0fdad81454e40b996aec5b14f8e3f5380a27a019c2613e7728a9e603
+      source_digest: sha256:37107ebc0fdad81454e40b996aec5b14f8e3f5380a27a019c2613e7728a9e603
+      runtime_ref: registry.lazycat.cloud/peter/lazycat-happycoder-cf5df8767302:eaa305697ecb8b88
+application:
+    package: cloud.lazycat.app.happycoder
+    version: 1.5.1
+    lpk_sha256: f00084a00041076d1cd6a6e15c8380b8e8735f3a8dc1fc3c4368646b4fa90a8a
+    changelog: |-
+        Upstream 1.5.1
+        - Release version 1.1.6
+packaged_at: 2026-11-23T10:50:32.037637883Z
