@@ -14,6 +14,7 @@ class AdapterContractTests(unittest.TestCase):
         cls.manifest = yaml.safe_load((ROOT / "lzc-manifest.yml").read_text())
         cls.package = yaml.safe_load((ROOT / "package.yml").read_text())
         cls.dockerfile = (ROOT / "image" / "Dockerfile").read_text()
+        cls.verify_script = (ROOT / "scripts" / "verify_package.py").read_text()
 
     def test_package_identity_and_initial_patch_version(self):
         self.assertEqual(self.package["package"], "cloud.lazycat.app.happycoder")
@@ -47,6 +48,7 @@ class AdapterContractTests(unittest.TestCase):
         self.assertIn("docker", prepare)
         self.assertIn("showActionAlert", prepare)
         self.assertIn("v1.1.6", prepare)
+        self.assertIn("registry.lazycat.cloud", self.verify_script)
 
 
 if __name__ == "__main__":

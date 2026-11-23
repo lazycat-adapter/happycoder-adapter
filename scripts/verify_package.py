@@ -30,8 +30,11 @@ def main():
     if action["build"]["prepare"]["mode"] != "command":
         raise SystemExit("Happy Coder must use the combined-image build")
     image = manifest["services"]["app"]["image"]
-    if not image.startswith("ttl.sh/lazycat-happycoder-"):
-        raise SystemExit("manifest image must remain a staging reference before delivery")
+    if not (
+        image.startswith("ttl.sh/lazycat-happycoder-")
+        or image.startswith("registry.lazycat.cloud/")
+    ):
+        raise SystemExit("manifest image must be the configured staging or official LazyCat image")
     print("Happy Coder package contract: OK")
 
 
