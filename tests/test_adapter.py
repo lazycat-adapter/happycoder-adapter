@@ -32,8 +32,9 @@ class AdapterContractTests(unittest.TestCase):
         application = self.manifest["application"]
         self.assertEqual(application["subdomain"], "happyweb")
         self.assertEqual(application["secondary_domains"], ["happyserver"])
-        self.assertEqual(application["routes"], ["/=http://app.cloud.lazycat.app.happycoder.lzcapp:80"])
-        self.assertEqual(self.manifest["services"]["app"]["binds"], ["/lzcapp/var/data:/data"])
+        self.assertEqual(application["routes"], ["/=http://happy.cloud.lazycat.app.happycoder.lzcapp:80"])
+        self.assertEqual(list(self.manifest["services"]), ["happy"])
+        self.assertEqual(self.manifest["services"]["happy"]["binds"], ["/lzcapp/var/data:/data"])
 
     def test_build_combines_web_and_server_and_rewrites_lazycat_domain(self):
         self.assertIn("EXPO_PUBLIC_HAPPY_SERVER_URL=https://happyserver.__LAZYCAT_BOX_DOMAIN__", self.dockerfile)

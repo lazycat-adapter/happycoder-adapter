@@ -23,6 +23,7 @@ Web 与 Happy Server，合并为一个 amd64 镜像，推送到匿名临时仓�
 
 - `happyweb.<微服域名>` 提供 Web 客户端。
 - `happyserver.<微服域名>` 提供 Happy Server API 和 WebSocket。
+- `happy` 是清单中的服务名，避免使用懒猫渲染器保留的 `app` 名称。
 - `HANDY_MASTER_SECRET` 在安装时由部署参数随机生成。
 - 服务端数据持久化在 `/lzcapp/var/data`。
 - `application.public_path: [/]` 保持旧应用的访问方式，客户端和 API 请求无需再次输入微服账号密码。
