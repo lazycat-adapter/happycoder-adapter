@@ -40,6 +40,12 @@ class AdapterContractTests(unittest.TestCase):
         self.assertIn("packages/happy-server/sources/standalone.ts", self.dockerfile)
         self.assertIn("happyserver.${LAZYCAT_BOX_DOMAIN}", self.dockerfile)
 
+    def test_prepare_script_builds_the_combined_image_from_selected_source(self):
+        prepare = (ROOT / "image" / "prepare.py").read_text()
+        self.assertIn("LAZYCAT_SOURCE_DIR", prepare)
+        self.assertIn("LAZYCAT_OUTPUT_IMAGE", prepare)
+        self.assertIn("docker", prepare)
+
 
 if __name__ == "__main__":
     unittest.main()
