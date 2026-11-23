@@ -45,6 +45,8 @@ class AdapterContractTests(unittest.TestCase):
         self.assertIn("LAZYCAT_SOURCE_DIR", prepare)
         self.assertIn("LAZYCAT_OUTPUT_IMAGE", prepare)
         self.assertIn("docker", prepare)
+        self.assertIn("showActionAlert", prepare)
+        self.assertIn("v1.1.6", prepare)
 
 
 if __name__ == "__main__":
