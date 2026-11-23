@@ -1,0 +1,17 @@
+params:
+  - id: HANDY_MASTER_SECRET
+    name: HANDY_MASTER_SECRET
+    type: string
+    description: Happy Server 的加密主密钥，安装时自动随机生成。
+    default_value: $random(len=64)
+    optional: false
+
+locales:
+  zh:
+    HANDY_MASTER_SECRET:
+      name: Happy Server 加密主密钥
+      description: 用于 Happy Server 身份验证和加密，安装时自动随机生成。
+  en:
+    HANDY_MASTER_SECRET:
+      name: Happy Server master secret
+      description: Used for Happy Server authentication and encryption. Generated during installation.

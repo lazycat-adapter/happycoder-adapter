@@ -1,0 +1,23 @@
+package: cloud.lazycat.app.happycoder
+# The existing store listing is 1.5.0. lazycat-action allocates 1.5.1 for the
+# first upstream v* release because the source version is lower than 1.5.0.
+version: 1.5.0
+name: Happy Coder
+description: 在任何地方使用 Claude Code 或 Codex，支持端到端加密。
+homepage: https://github.com/slopus/happy
+author: slopus
+license: MIT
+min_os_version: 1.6.0
+locales:
+  zh-CN:
+    name: Happy Coder
+    description: 在任何地方使用 Claude Code 或 Codex，支持端到端加密。
+    usage: |
+      首次打开后，请在 Happy 客户端中配置要连接的 Happy Server 地址；
+      服务端数据持久保存在 /lzcapp/var/data。
+  en-US:
+    name: Happy Coder
+    description: Use Claude Code or Codex from anywhere with end-to-end encryption.
+    usage: |
+      Configure the Happy Server address in the Happy client after opening;
+      server data is persisted under /lzcapp/var/data.

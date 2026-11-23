@@ -1,0 +1,34 @@
+usage: |
+  应用访问地址：https://{{ .S.AppDomain }}
+  首次打开后，请在 Happy 客户端中配置此 Happy Server 地址；
+  服务端数据持久保存在 /lzcapp/var/data。
+application:
+  subdomain: happyweb
+  secondary_domains:
+    - happyserver
+  background_task: true
+  public_path:
+    - /
+  routes:
+    - /=http://app.cloud.lazycat.app.happycoder.lzcapp:80
+services:
+  app:
+    # lazycat-action replaces this staging reference with the copied official
+    # image before each real LPK build.
+    image: ttl.sh/lazycat-happycoder-initial:24h
+    environment:
+      NODE_ENV: production
+      PORT: "3005"
+      PUBLIC_URL: https://happyserver.${LAZYCAT_BOX_DOMAIN}
+      HANDY_MASTER_SECRET: '{{ .U.HANDY_MASTER_SECRET }}'
+    binds:
+      - /lzcapp/var/data:/data
+    healthcheck:
+      test:
+        - CMD
+        - curl
+        - -f
+        - http://localhost/health
+      interval: 30s
+      timeout: 5s
+      retries: 5
