@@ -18,6 +18,7 @@ Web 与 Happy Server，合并为一个 amd64 镜像，推送到匿名临时仓�
 仓库使用组织级 `LZC_API_TOKEN`，工作流通过 `secrets: inherit` 继承。对应开发者账号
 需要拥有 `cloud.lazycat.app.happycoder` 的开发者或协作者权限。工作流中的 `dry-run`
 默认勾选，取消后才会构建、转存、打包并送审。
+如果适配器清单发生变化但上游源版本没有变化，手动运行时同时取消 `dry-run` 并勾选 `force-rebuild`，共享 Action 会分配下一个修订版本重新送审。
 
 ## 应用结构
 

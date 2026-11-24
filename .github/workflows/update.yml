@@ -26,6 +26,10 @@ on:
         description: Explicitly retry a repaired rejected source with a new app patch.
         type: boolean
         default: false
+      force-rebuild:
+        description: Rebuild the current source after adapter packaging changes.
+        type: boolean
+        default: false
 permissions:
   contents: write
   pull-requests: write
@@ -43,4 +47,5 @@ jobs:
       enable-qemu: false
       dry-run: ${{ github.event_name == 'push' || (github.event_name == 'schedule' && vars.LAZYCAT_AUTO_PUBLISH != 'true') || (github.event_name == 'workflow_dispatch' && inputs.dry-run) }}
       retry-rejected: ${{ github.event_name == 'workflow_dispatch' && inputs.retry-rejected || false }}
+      force-rebuild: ${{ github.event_name == 'workflow_dispatch' && inputs.force-rebuild || false }}
     secrets: inherit
