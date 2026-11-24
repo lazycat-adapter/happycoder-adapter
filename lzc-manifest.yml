@@ -10,9 +10,9 @@ application:
   public_path:
     - /
   routes:
-    - /=http://happy.cloud.lazycat.app.happycoder.lzcapp:80
+    - /=http://happycoder.cloud.lazycat.app.happycoder.lzcapp:80
 services:
-  happy:
+  happycoder:
     # lazycat-action replaces this staging reference with the copied official
     # image before each real LPK build.
     # upstream: ttl.sh/lazycat-happycoder-9aa7cd0a40ab:24h@sha256:2c6ec137c32b14d57005586d94cabc52ea9002651f23e6d89b0024528dac5a24

@@ -23,15 +23,15 @@ def main():
         raise SystemExit("unexpected web subdomain")
     if manifest["application"]["secondary_domains"] != ["happyserver"]:
         raise SystemExit("unexpected server domain")
-    if list(manifest["services"]) != ["happy"]:
-        raise SystemExit("Happy Coder must use the happy service name")
-    if manifest["services"]["happy"]["binds"] != ["/lzcapp/var/data:/data"]:
+    if list(manifest["services"]) != ["happycoder"]:
+        raise SystemExit("Happy Coder must use the happycoder service name")
+    if manifest["services"]["happycoder"]["binds"] != ["/lzcapp/var/data:/data"]:
         raise SystemExit("unexpected persistent data bind")
     if action["source"]["url"] != "https://github.com/slopus/happy.git":
         raise SystemExit("unexpected upstream source")
     if action["build"]["prepare"]["mode"] != "command":
         raise SystemExit("Happy Coder must use the combined-image build")
-    image = manifest["services"]["happy"]["image"]
+    image = manifest["services"]["happycoder"]["image"]
     if not (
         image.startswith("ttl.sh/lazycat-happycoder-")
         or image.startswith("registry.lazycat.cloud/")

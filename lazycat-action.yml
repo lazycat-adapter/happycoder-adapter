@@ -31,9 +31,9 @@ build:
     # image into its permanent registry before the LPK is built.
     output_image: ttl.sh/lazycat-happycoder-{fingerprint}:24h
 images:
-  - id: happy
+  - id: happycoder
     target: service
-    service: happy
+    service: happycoder
     source: ttl.sh/lazycat-happycoder
     delivery:
       mode: lazycat

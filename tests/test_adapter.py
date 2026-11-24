@@ -18,7 +18,7 @@ class AdapterContractTests(unittest.TestCase):
 
     def test_package_identity_and_initial_patch_version(self):
         self.assertEqual(self.package["package"], "cloud.lazycat.app.happycoder")
-        self.assertEqual(self.package["version"], "1.5.0")
+        self.assertEqual(self.package["version"], "1.5.2")
         self.assertEqual(self.package["homepage"], "https://github.com/slopus/happy")
 
     def test_source_selects_only_stable_happy_app_tags(self):
@@ -32,9 +32,9 @@ class AdapterContractTests(unittest.TestCase):
         application = self.manifest["application"]
         self.assertEqual(application["subdomain"], "happyweb")
         self.assertEqual(application["secondary_domains"], ["happyserver"])
-        self.assertEqual(application["routes"], ["/=http://happy.cloud.lazycat.app.happycoder.lzcapp:80"])
-        self.assertEqual(list(self.manifest["services"]), ["happy"])
-        self.assertEqual(self.manifest["services"]["happy"]["binds"], ["/lzcapp/var/data:/data"])
+        self.assertEqual(application["routes"], ["/=http://happycoder.cloud.lazycat.app.happycoder.lzcapp:80"])
+        self.assertEqual(list(self.manifest["services"]), ["happycoder"])
+        self.assertEqual(self.manifest["services"]["happycoder"]["binds"], ["/lzcapp/var/data:/data"])
 
     def test_build_combines_web_and_server_and_rewrites_lazycat_domain(self):
         self.assertIn("EXPO_PUBLIC_HAPPY_SERVER_URL=https://happyserver.__LAZYCAT_BOX_DOMAIN__", self.dockerfile)
