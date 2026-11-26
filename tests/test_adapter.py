@@ -18,7 +18,7 @@ class AdapterContractTests(unittest.TestCase):
 
     def test_package_identity_and_initial_patch_version(self):
         self.assertEqual(self.package["package"], "cloud.lazycat.app.happycoder")
-        self.assertEqual(self.package["version"], "1.5.2")
+        self.assertEqual(self.package["version"], "1.5.3")
         self.assertEqual(self.package["homepage"], "https://github.com/slopus/happy")
 
     def test_source_selects_only_stable_happy_app_tags(self):
@@ -41,6 +41,10 @@ class AdapterContractTests(unittest.TestCase):
         self.assertIn("packages/happy-app/dist", self.dockerfile)
         self.assertIn("packages/happy-server/sources/standalone.ts", self.dockerfile)
         self.assertIn("happyserver.${LAZYCAT_BOX_DOMAIN}", self.dockerfile)
+
+    def test_runtime_removes_base_nginx_site_and_loads_server_tsconfig_aliases(self):
+        self.assertIn("/etc/nginx/sites-enabled/default", self.dockerfile)
+        self.assertIn("TSX_TSCONFIG_PATH=/repo/packages/happy-server/tsconfig.json", self.dockerfile)
 
     def test_prepare_script_builds_the_combined_image_from_selected_source(self):
         prepare = (ROOT / "image" / "prepare.py").read_text()

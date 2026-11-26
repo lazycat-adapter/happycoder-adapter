@@ -51,12 +51,13 @@ WORKDIR /repo
 RUN apt-get update \
     && apt-get install -y --no-install-recommends nginx ffmpeg curl ca-certificates \
     && rm -rf /var/lib/apt/lists/* \
-    && rm -f /etc/nginx/conf.d/default.conf
+    && rm -f /etc/nginx/conf.d/default.conf /etc/nginx/sites-enabled/default
 
 ENV NODE_ENV=production
 ENV DATA_DIR=/data
 ENV PGLITE_DIR=/data/pglite
 ENV PORT=3005
+ENV TSX_TSCONFIG_PATH=/repo/packages/happy-server/tsconfig.json
 
 COPY --from=builder /repo/node_modules /repo/node_modules
 COPY --from=builder /repo/packages/happy-server /repo/packages/happy-server
