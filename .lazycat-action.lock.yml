@@ -6,7 +6,7 @@ source:
     revision: cda9302f888262dcc0bf85b94e906d202021d78a
     tag: v1.1.6
 fingerprint: sha256:7888362cc8d9084a544f2b0241b8b38d5bd5ab44bb42f6f679e50b2e4510d47b
-status: packaged
+status: submitted
 images:
     - id: happycoder
       source_ref: ttl.sh/lazycat-happycoder-7888362cc8d9:24h@sha256:a1e745f0489cfc04352f7605c8a703e04fa735f5d06f6c7eb5febe07ec6f6b76
@@ -51,3 +51,17 @@ reviews:
       created_at: 2026-11-24T02:00:00.911Z
       submitted_at: 2026-11-24T02:00:01.076026088Z
       checked_at: 2026-11-26T08:50:38.775423341Z
+    - id: 24001
+      source:
+        kind: git
+        version: 1.1.6
+        ref: refs/tags/v1.1.6
+        revision: cda9302f888262dcc0bf85b94e906d202021d78a
+        tag: v1.1.6
+      fingerprint: sha256:7888362cc8d9084a544f2b0241b8b38d5bd5ab44bb42f6f679e50b2e4510d47b
+      application_version: 1.5.4
+      lpk_sha256: c06f44ccc9fbf6204149744c9b974f2eaba1fbcba95f4cfce3a6898dc544e587
+      status: waiting
+      created_at: 2026-11-26T09:03:20.906Z
+      submitted_at: 2026-11-26T09:03:21.033804721Z
+      checked_at: 2026-11-26T09:03:21.033805322Z
