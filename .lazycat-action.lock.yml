@@ -5,21 +5,21 @@ source:
     ref: refs/tags/v1.1.6
     revision: cda9302f888262dcc0bf85b94e906d202021d78a
     tag: v1.1.6
-fingerprint: sha256:7888362cc8d9084a544f2b0241b8b38d5bd5ab44bb42f6f679e50b2e4510d47b
-status: submitted
+fingerprint: sha256:11df01d37b189d9f2f875308a7b140c77ab9eb9c2ef6f39d0a411ef3291a9d5d
+status: packaged
 images:
     - id: happycoder
-      source_ref: ttl.sh/lazycat-happycoder-7888362cc8d9:24h@sha256:a1e745f0489cfc04352f7605c8a703e04fa735f5d06f6c7eb5febe07ec6f6b76
-      source_digest: sha256:a1e745f0489cfc04352f7605c8a703e04fa735f5d06f6c7eb5febe07ec6f6b76
-      runtime_ref: registry.lazycat.cloud/peter/lazycat-happycoder-7888362cc8d9:df77d71afa63283b
+      source_ref: ttl.sh/lazycat-happycoder-11df01d37b18:24h@sha256:753f9f490e8122695ac18a13b5cb741a3f9c3acb5719e4b76b544c8699f24500
+      source_digest: sha256:753f9f490e8122695ac18a13b5cb741a3f9c3acb5719e4b76b544c8699f24500
+      runtime_ref: registry.lazycat.cloud/peter/lazycat-happycoder-11df01d37b18:b898dafbc6c48001
 application:
     package: cloud.lazycat.app.happycoder
-    version: 1.5.4
-    lpk_sha256: c06f44ccc9fbf6204149744c9b974f2eaba1fbcba95f4cfce3a6898dc544e587
+    version: 1.5.5
+    lpk_sha256: 1f89ee7d12d786ceb176d5382d0dd7220a0df7cb6c468d4a10f6c60357529acb
     changelog: |-
-        Upstream 1.5.4
+        Upstream 1.5.5
         - Release version 1.1.6
-packaged_at: 2026-11-26T09:03:00.055233379Z
+packaged_at: 2026-11-26T10:26:52.29677498Z
 reviews:
     - id: 23779
       source:

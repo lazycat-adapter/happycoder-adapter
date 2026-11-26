@@ -15,8 +15,8 @@ services:
   happycoder:
     # lazycat-action replaces this staging reference with the copied official
     # image before each real LPK build.
-    # upstream: ttl.sh/lazycat-happycoder-7888362cc8d9:24h@sha256:a1e745f0489cfc04352f7605c8a703e04fa735f5d06f6c7eb5febe07ec6f6b76
-    image: registry.lazycat.cloud/peter/lazycat-happycoder-7888362cc8d9:df77d71afa63283b
+    # upstream: ttl.sh/lazycat-happycoder-11df01d37b18:24h@sha256:753f9f490e8122695ac18a13b5cb741a3f9c3acb5719e4b76b544c8699f24500
+    image: registry.lazycat.cloud/peter/lazycat-happycoder-11df01d37b18:b898dafbc6c48001
     environment:
       NODE_ENV: production
       PORT: "3005"
