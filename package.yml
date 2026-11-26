@@ -1,7 +1,7 @@
 package: cloud.lazycat.app.happycoder
 # The existing store listing is 1.5.0. lazycat-action allocates 1.5.1 for the
 # first upstream v* release because the source version is lower than 1.5.0.
-version: 1.5.3
+version: 1.5.4
 name: Happy Coder
 description: 在任何地方使用 Claude Code 或 Codex，支持端到端加密。
 homepage: https://github.com/slopus/happy
