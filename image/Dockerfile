@@ -71,7 +71,7 @@ map $http_upgrade $connection_upgrade {
 }
 
 server {
-    listen 80 default_server;
+    listen 80;
     server_name happyserver.*;
 
     location / {
@@ -85,7 +85,7 @@ server {
 }
 
 server {
-    listen 80;
+    listen 80 default_server;
     server_name _;
 
     location /v1/ {

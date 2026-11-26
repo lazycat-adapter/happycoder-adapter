@@ -45,6 +45,8 @@ class AdapterContractTests(unittest.TestCase):
     def test_runtime_removes_base_nginx_site_and_loads_server_tsconfig_aliases(self):
         self.assertIn("/etc/nginx/sites-enabled/default", self.dockerfile)
         self.assertIn("TSX_TSCONFIG_PATH=/repo/packages/happy-server/tsconfig.json", self.dockerfile)
+        self.assertIn("listen 80 default_server;\n    server_name _;", self.dockerfile)
+        self.assertIn("server_name happyserver.*;", self.dockerfile)
 
     def test_prepare_script_builds_the_combined_image_from_selected_source(self):
         prepare = (ROOT / "image" / "prepare.py").read_text()
